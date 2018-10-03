@@ -21,7 +21,7 @@
                         <a href="/shop">Shop</a>
                     </li>
                     <li>
-                        <a href="#">Admin</a>
+                        <a href="/products">Admin</a>
                     </li>
                     <li>
                         <a href="#">Login</a>
@@ -55,6 +55,6 @@
         </div>
         <!-- Cart Area -->
         <div class="cart-area">
-            <a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""> <span>3</span></a>
+            <a href="/cart" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""> <span>3</span></a>
         </div>
     </div>

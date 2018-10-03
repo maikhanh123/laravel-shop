@@ -28,4 +28,20 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::resource('products','ProductController');
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/admin', function () {
+    $products = App\product::all();
+    return view('admin.productsList', compact(['products']));
+});
+
+Route::get('/shop', function () {
+    $products = App\product::all();
+    return view('product.index', compact(['products']));
+});
+
 

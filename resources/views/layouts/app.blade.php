@@ -16,7 +16,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -25,14 +25,14 @@
 <header class="header_area">
     <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
         <!-- Classy Menu -->
-        @include('layouts.navBar');
+        @include('layouts.navBar')
     </div>
 </header>
 <!-- ##### Header Area End ##### -->
 
 
 
-@yield('content');
+@yield('content')
 
 
 <!-- ##### Right Side Cart Area ##### -->
