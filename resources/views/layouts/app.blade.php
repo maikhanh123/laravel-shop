@@ -15,8 +15,8 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/core-style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 </head>
 
@@ -127,7 +127,7 @@
                 <div class="single_widget_area d-flex mb-30">
                     <!-- Logo -->
                     <div class="footer-logo mr-50">
-                        <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                        <a href="#"><img src="../img/core-img/logo2.png" alt=""></a>
                     </div>
                     <!-- Footer Menu -->
                     <div class="footer_menu">
@@ -206,17 +206,17 @@
 <!-- ##### Footer Area End ##### -->
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/popper.min.js"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <!-- Plugins js -->
-<script src="js/plugins.js"></script>
+<script src="{{asset('js/plugins.js')}}"></script>
 <!-- Classy Nav js -->
-<script src="js/classy-nav.min.js"></script>
+<script src="{{asset('js/classy-nav.min.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 
 </body>
 

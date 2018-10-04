@@ -47,6 +47,8 @@
     <!-- Navigation -->
 @include('admin.navBarAdmin')
 
+
+
     {{--Content--}}
 @yield('content')
 

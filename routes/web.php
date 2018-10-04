@@ -15,33 +15,28 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/shop', function () {
-    return view('shop');
-});
-
-
-Route::get('/navbar', function () {
-    return view('layouts.navBar');
-});
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
+//Route::get('/cart', function () {
+//    return view('cart');
+//});
+
 Route::resource('products','ProductController');
+Route::resource('home','HomeController');
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/product/{id}', [
+    'uses' => 'HomeController@singleProduct',
+    'as' =>'products.singleProduct'
+]);
 
-Route::get('/admin', function () {
-    $products = App\product::all();
-    return view('admin.productsList', compact(['products']));
-});
+Route::post('/cart/add','CartController@addToCart')->name('cart.add');
 
-Route::get('/shop', function () {
-    $products = App\product::all();
-    return view('product.index', compact(['products']));
-});
+Route::get('/cart', 'CartController@cart')->name('cart');
 
+Route::get('/cart/delete/{id}', 'CartController@cartDelete')->name('cart.delete');
 
+Route::get('/cart/minus/{id}/{qty}', 'CartController@cartMinus')->name('cart.minus');
+
+Route::get('/cart/plus/{id}/{qty}', 'CartController@cartPlus')->name('cart.plus');

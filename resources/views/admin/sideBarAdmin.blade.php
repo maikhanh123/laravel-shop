@@ -19,24 +19,9 @@
             <li>
                 <a href="/admin"><i class="fa fa-table fa-fw"></i> Product List</a>
             </li>
-            <!-- <li>
-                <a href="index.php?view=form"><i class="fa fa-edit fa-fw"></i> Forms</a>
-            </li> -->
-
             <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i> Add Product<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="/products/create">Product Form</a>
-                    </li>
-                    <li>
-                        <a href="/categoryForm">Catogories Form</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
+                <a href="/products/create"><i class="fa fa-edit fa-fw"></i> Add Product</a>
             </li>
-
-
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

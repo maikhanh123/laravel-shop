@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -65,7 +66,7 @@ class ProductController extends Controller
         $product->product_dateUpdate = isset($request->product_dateUpdate) ? $request->product_dateUpdate: null;
 
         $product->save();
-
+//        Session::flash('success', 'Product saved');
         return redirect()->route('products.index');
 
 
@@ -132,7 +133,7 @@ class ProductController extends Controller
         }
 
         $product->save();
-
+//        Session::flash('success', 'Product updated');
 
         return redirect('/products');
     }
@@ -150,7 +151,10 @@ class ProductController extends Controller
 //            var_dump($product->product_image);exit();
             unlink('img/uploads/' . $product->product_image);
         }
+
+
         $product->delete();
+//        Session::flash('success', 'Product deleted');
         return redirect('/products');
     }
 }

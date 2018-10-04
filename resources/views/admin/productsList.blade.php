@@ -2,6 +2,11 @@
 
 @section('content')
 <div id="page-wrapper">
+    {{--@if(Session::has('success'))--}}
+        {{--<div class="alert alert-success">--}}
+            {{--{{Session::get('success')}}--}}
+        {{--</div>--}}
+    {{--@endif--}}
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Products Table</h1>

@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">SB Admin v2.0</a>
-        <a class="navbar-brand" href="/shop">Back to Shop</a>
+        <a class="navbar-brand" href="/home">Back to Shop</a>
     </div>
     <!-- /.navbar-header -->
 

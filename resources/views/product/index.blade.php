@@ -191,7 +191,7 @@
                                     <div class="product-description">
                                         <?php $categories = App\category::findOrFail($product->product_cat) ?>
                                         <span>{{$categories->cat_name}}</span>
-                                        <a href="{{route('products.edit',['id' => $product->id])}}">
+                                        <a href="{{route('home.show',['id' => $product->id])}}">
                                             <h6>{{$product->product_name}}</h6>
                                         </a>
                                         <p class="product-price">${{$product->product_price}}</p>
@@ -200,7 +200,15 @@
                                         <div class="hover-content">
                                             <!-- Add to Cart -->
                                             <div class="add-to-cart-btn">
-                                                <a href="/cart" class="btn essence-btn">Add to Cart</a>
+                                                <form action="{{route('cart.add')}}" method="post">
+{{--                                                    {{csrf_token()}}--}}
+                                                    {{csrf_field()}}
+
+                                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                                    <input type="hidden" name="product_quantity" value="1">
+                                                    <button type="submit" class="btn essence-btn">Add to Cart</button>
+                                                </form>
+                                                {{--<a href="{{route('cart.add', ['id' => $product->id]}}" class="btn essence-btn">Add to Cart</a>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -214,15 +222,16 @@
                     </div>
                     <!-- Pagination -->
                     <nav aria-label="navigation">
-                        <ul class="pagination mt-50 mb-70">
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">...</a></li>
-                            <li class="page-item"><a class="page-link" href="#">21</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
+                        {{$products->links()}}
+                        {{--<ul class="pagination mt-50 mb-70">--}}
+                            {{--<li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">...</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">21</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>--}}
+                        {{--</ul>--}}
                     </nav>
                 </div>
             </div>
