@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Cart;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -60,5 +61,29 @@ class CartController extends Controller
         Cart::update($id, $qty + 1);
         return redirect()->back();
     }
+
+    public function cartCheckout()
+    {
+//        dd(\request()->all());
+
+        \Stripe\Stripe::setApiKey("sk_test_kQGjyBkIDC8YE6wAotLXE687");
+//        $token = $_POST['stripeToken'];
+        $token = request()->stripeToken;
+
+        $charge = \Stripe\Charge::create([
+            'amount' => Cart::total() * 100,
+            'currency' => 'usd',
+            'description' => 'Example charge',
+            'source' => $token,
+        ]);
+
+
+        Cart::destroy();
+
+        Mail::to(\request()->stripeEmail)->send(new \App\Mail\PurchaseSuccessful);
+
+        return redirect('/home');
+    }
+
 
 }

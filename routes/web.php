@@ -40,3 +40,5 @@ Route::get('/cart/delete/{id}', 'CartController@cartDelete')->name('cart.delete'
 Route::get('/cart/minus/{id}/{qty}', 'CartController@cartMinus')->name('cart.minus');
 
 Route::get('/cart/plus/{id}/{qty}', 'CartController@cartPlus')->name('cart.plus');
+
+Route::post('/cart/checkout', 'CartController@cartCheckout')->name('cart.checkout');

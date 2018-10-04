@@ -84,7 +84,26 @@
             </table>
 
         </div>
+
         <!-- CART TOTALS-->
+
+        {{--CHECKOUT--}}
+        <div class="col-xs-4 ">
+
+            <form action="{{route('cart.checkout')}}" method="POST">
+                {{csrf_field()}}
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_7rZ8rEBFPlK1Ew6yjpaIxhGS"
+                        data-amount="{{ Cart::total() * 100 }}"
+                        data-name="Demo Site"
+                        data-description="Example charge"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto">
+                </script>
+            </form>
+
+        </div>
 
     </div>
 
