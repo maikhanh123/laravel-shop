@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends Controller
 {
@@ -15,7 +17,9 @@ class HomeController extends Controller
     public function index()
     {
         // $products = Product::all();
-        $products = Product::paginate(6);
+        $products = Product::paginate(1);
+        // $products -> withPath('products');
+        // Paginator::defaultView('product.paginationDemo');
         return view('product.index', compact(['products']));
     }
 

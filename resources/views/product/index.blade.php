@@ -186,7 +186,6 @@
                                             <a href="#" class="favme fa fa-heart"></a>
                                         </div>
                                     </div>
-
                                     <!-- Product Description -->
                                     <div class="product-description">
                                         <?php $categories = App\category::findOrFail($product->product_cat) ?>
@@ -201,7 +200,7 @@
                                             <!-- Add to Cart -->
                                             <div class="add-to-cart-btn">
                                                 <form action="{{route('cart.add')}}" method="post">
-{{--                                                    {{csrf_token()}}--}}
+                                                    {{--{{csrf_token()}}--}}
                                                     {{csrf_field()}}
 
                                                     <input type="hidden" name="product_id" value="{{$product->id}}">
@@ -221,18 +220,7 @@
 
                     </div>
                     <!-- Pagination -->
-                    <nav aria-label="navigation">
-                        {{$products->links()}}
-                        <!-- <ul class="pagination mt-50 mb-70">
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">...</a></li>
-                            <li class="page-item"><a class="page-link" href="#">21</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul> -->
-                    </nav>
+                    {{$products->onEachSide(2)->links()}}                    
                 </div>
             </div>
         </div>
