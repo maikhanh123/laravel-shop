@@ -11,6 +11,7 @@
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
         "stripe/stripe-php": "^6.19"
+        
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
