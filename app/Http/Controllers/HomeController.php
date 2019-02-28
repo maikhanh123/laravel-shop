@@ -17,10 +17,12 @@ class HomeController extends Controller
     public function index()
     {
         // $products = Product::all();
-        $products = Product::paginate(1);
+        $products = Product::paginate(6);
         // $products -> withPath('products');
         // Paginator::defaultView('product.paginationDemo');
         return view('product.index', compact(['products']));
+
+        // return $products;
     }
 
     /**

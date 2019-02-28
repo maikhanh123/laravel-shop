@@ -220,7 +220,7 @@
 
                     </div>
                     <!-- Pagination -->
-                    {{$products->onEachSide(2)->links()}}                    
+                    {{$products->links()}}                    
                 </div>
             </div>
         </div>
